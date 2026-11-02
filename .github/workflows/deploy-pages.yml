@@ -29,6 +29,8 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Build site
         run: npm run build
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
       - name: Validate build
         run: npm run check
       - name: Upload static site

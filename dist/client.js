@@ -1,10 +1,11 @@
 const toggle=document.querySelector('.menu-toggle');
 const nav=document.querySelector('#main-nav');
+const siteBase=document.querySelector('meta[name="site-base"]')?.content||'/';
 toggle?.addEventListener('click',()=>{
  const open=toggle.getAttribute('aria-expanded')!=='true';
  toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');
  nav.classList.toggle('open',open);
- toggle.querySelector('img').src=`/icons/${open?'x':'menu'}.svg`;
+ toggle.querySelector('img').src=`${siteBase}icons/${open?'x':'menu'}.svg`;
 });
 const gsap=window.gsap;
 if(gsap&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
