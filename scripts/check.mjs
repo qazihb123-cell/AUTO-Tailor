@@ -15,6 +15,7 @@ import {
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dist = path.join(root, 'dist');
 const site = JSON.parse(await readFile(path.join(root, 'src/data/site.json'), 'utf8'));
+const publicSiteUrl = site.siteUrl || (process.env.GITHUB_REPOSITORY ? `https://${process.env.GITHUB_REPOSITORY.split('/')[0]}.github.io` : '');
 const assets = JSON.parse(await readFile(path.join(root, 'src/data/asset-sources.json'), 'utf8'));
 const routes = JSON.parse(await readFile(path.join(dist, 'routes.json'), 'utf8'));
 const expectedSources = new Set([
@@ -119,7 +120,7 @@ for (const route of routes) {
   assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, `One H1 required for ${route.route}.`);
   if (route.route === '/404.html') assert.ok(html.includes('<meta name="robots" content="noindex">'));
   else assert.ok(!html.includes('<meta name="robots" content="noindex">'));
-  if (site.siteUrl) {
+  if (publicSiteUrl) {
     assert.ok(html.includes('<link rel="canonical"'));
     assert.ok(!html.includes('<meta name="robots" content="noindex">'));
   } else {
@@ -128,7 +129,7 @@ for (const route of routes) {
 }
 
 const robots = await readFile(path.join(dist, 'robots.txt'), 'utf8');
-if (site.siteUrl) {
+if (publicSiteUrl) {
   assert.ok(robots.startsWith('User-agent: *\nAllow: /'));
   await stat(path.join(dist, 'sitemap.xml'));
 } else {

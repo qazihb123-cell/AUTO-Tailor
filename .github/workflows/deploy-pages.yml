@@ -33,6 +33,8 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
       - name: Validate build
         run: npm run check
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
