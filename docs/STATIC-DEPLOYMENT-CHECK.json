@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-02",
+  "source": "dist",
+  "copiedDirectory": "work/static-deployment-check-20261102-final",
+  "server": "Python 3.11.4 http.server, localhost only",
+  "files": 105,
+  "bytes": 2622910,
+  "endpoints": [
+    "/",
+    "/products/",
+    "/products/paint-protection-film/",
+    "/products/window-film/",
+    "/products/t75/",
+    "/contact/",
+    "/styles.css",
+    "/client.js",
+    "/images/hero-studio.webp",
+    "/images/ppf-t75m.webp",
+    "/icons/arrow-right.svg",
+    "/robots.txt",
+    "/404.html"
+  ],
+  "failures": 0,
+  "notes": [
+    "The copied static directory was served without the source tree or Node build process.",
+    "All listed endpoints returned HTTP 200.",
+    "The temporary server was stopped after the check.",
+    "sitemap.xml is intentionally absent while siteUrl is empty; robots.txt disallows indexing.",
+    "Remote hosting, custom 404 routing, DNS and TLS were not tested."
+  ]
+}
+

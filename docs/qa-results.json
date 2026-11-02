@@ -1,0 +1,113 @@
+{
+  "timestamp": "2026-11-02T14:38:55.176Z",
+  "browser": "156.0.4314.58",
+  "baseUrl": "http://127.0.0.1:4173",
+  "routes": 49,
+  "products": 40,
+  "internalDestinations": 131,
+  "desktopRoutesAudited": 49,
+  "mobileRoutesAudited": 49,
+  "viewports": [
+    320,
+    390,
+    768,
+    1440,
+    1920
+  ],
+  "screenshots": 14,
+  "screenshotFiles": [
+    {
+      "path": "docs/screenshots/home-1440.png",
+      "width": 1440,
+      "bytes": 1045186
+    },
+    {
+      "path": "docs/screenshots/catalogue-1440.png",
+      "width": 1440,
+      "bytes": 1866925
+    },
+    {
+      "path": "docs/screenshots/detail-1440.png",
+      "width": 1440,
+      "bytes": 441118
+    },
+    {
+      "path": "docs/screenshots/window-detail-1440.png",
+      "width": 1440,
+      "bytes": 293641
+    },
+    {
+      "path": "docs/screenshots/contact-1440.png",
+      "width": 1440,
+      "bytes": 89235
+    },
+    {
+      "path": "docs/screenshots/technology-1440.png",
+      "width": 1440,
+      "bytes": 485316
+    },
+    {
+      "path": "docs/screenshots/faq-1440.png",
+      "width": 1440,
+      "bytes": 87087
+    },
+    {
+      "path": "docs/screenshots/home-390.png",
+      "width": 390,
+      "bytes": 584048
+    },
+    {
+      "path": "docs/screenshots/catalogue-390.png",
+      "width": 390,
+      "bytes": 2294504
+    },
+    {
+      "path": "docs/screenshots/detail-390.png",
+      "width": 390,
+      "bytes": 298820
+    },
+    {
+      "path": "docs/screenshots/window-detail-390.png",
+      "width": 390,
+      "bytes": 281958
+    },
+    {
+      "path": "docs/screenshots/contact-390.png",
+      "width": 390,
+      "bytes": 75232
+    },
+    {
+      "path": "docs/screenshots/technology-390.png",
+      "width": 390,
+      "bytes": 225460
+    },
+    {
+      "path": "docs/screenshots/faq-390.png",
+      "width": 390,
+      "bytes": 66941
+    }
+  ],
+  "checks": [
+    "49 routes audited at 1440px and 390px; one H1, unique titles, descriptions, source/page correspondence for 40 details and 131 internal destinations returning 200.",
+    "Seven representative pages rendered at desktop and mobile widths; every image loaded, screenshots were non-trivial, and no horizontal overflow was detected. 14 screenshots refreshed.",
+    "Additional 320px, 768px and 1920px representative checks passed.",
+    "Search, empty state, reset, series filter, all five performance/material filters, category counts, thickness sort and name sort passed.",
+    "Inquiry preselection, four required-field errors, invalid email, short-message validation, accessible error text and model-specific local draft download passed. No POST request occurred.",
+    "Intercepted success, explicit rejection and invalid JSON states passed with request payload/product correspondence. These are UI simulations, not real mail delivery.",
+    "Mobile navigation, Escape closure and FAQ disclosure passed.",
+    "Unknown routes return HTTP 404 with the branded noindex page."
+  ],
+  "simulatedChecks": [
+    "The configured-endpoint success, rejection and invalid-JSON UI states were Playwright interceptions. No external message was sent or delivered."
+  ],
+  "notTested": [
+    "Real email, CRM or WhatsApp delivery",
+    "Production DNS, hosting, TLS and host-specific 404 behavior",
+    "Real iOS Safari, Android browser and assistive-device testing"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "badResponses": [],
+  "layoutIssues": [],
+  "elementOverflows": []
+}

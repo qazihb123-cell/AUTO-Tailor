@@ -1,0 +1,198 @@
+[
+  {
+    "route": "/",
+    "title": "AUTO TAILOR · Automotive Films"
+  },
+  {
+    "route": "/products/",
+    "title": "Product catalogue"
+  },
+  {
+    "route": "/products/paint-protection-film/",
+    "title": "Paint Protection Film"
+  },
+  {
+    "route": "/products/color-ppf/",
+    "title": "Color TPU PPF"
+  },
+  {
+    "route": "/products/window-film/",
+    "title": "Window Film"
+  },
+  {
+    "route": "/products/t75/",
+    "title": "T75"
+  },
+  {
+    "route": "/products/t85/",
+    "title": "T85"
+  },
+  {
+    "route": "/products/t75m/",
+    "title": "T75M"
+  },
+  {
+    "route": "/products/a75/",
+    "title": "A75"
+  },
+  {
+    "route": "/products/a85/",
+    "title": "A85"
+  },
+  {
+    "route": "/products/a75m/",
+    "title": "A75M"
+  },
+  {
+    "route": "/products/super-black/",
+    "title": "AT Super Black"
+  },
+  {
+    "route": "/products/super-matte-black/",
+    "title": "AT Super Matte Black"
+  },
+  {
+    "route": "/products/tpu-aster-black/",
+    "title": "TPU Aster Black"
+  },
+  {
+    "route": "/products/tpu-standard/",
+    "title": "TPU Standard Collection"
+  },
+  {
+    "route": "/products/tpu-starry-pink/",
+    "title": "TPU Zhongjin Starry Pink"
+  },
+  {
+    "route": "/products/tpu-3d-gray/",
+    "title": "TPU 3D Iridescent Gray"
+  },
+  {
+    "route": "/products/tpu-matte-3d-gray/",
+    "title": "TPU Matte 3D Iridescent Gray"
+  },
+  {
+    "route": "/products/tpu-phantom-red/",
+    "title": "TPU Starry Phantom Red"
+  },
+  {
+    "route": "/products/tpu-flow-black-red/",
+    "title": "TPU Flowing Black / Red"
+  },
+  {
+    "route": "/products/tpu-satin-gray/",
+    "title": "TPU Satin Flowing Gray"
+  },
+  {
+    "route": "/products/tpu-clear-carbon/",
+    "title": "TPU Ultra-clear Carbon Fiber"
+  },
+  {
+    "route": "/products/tpu-satin-carbon/",
+    "title": "TPU Satin Carbon Fiber"
+  },
+  {
+    "route": "/products/tpu-gloss-carbon/",
+    "title": "TPU High-gloss Carbon Fiber"
+  },
+  {
+    "route": "/products/ae-7095/",
+    "title": "AE HD Ceramic 7095"
+  },
+  {
+    "route": "/products/ae-1595/",
+    "title": "AE HD Ceramic 1595"
+  },
+  {
+    "route": "/products/ae-2595/",
+    "title": "AE HD Ceramic 2595"
+  },
+  {
+    "route": "/products/ae-3595/",
+    "title": "AE HD Ceramic 3595"
+  },
+  {
+    "route": "/products/at-70s/",
+    "title": "AT Dual Silver 70S"
+  },
+  {
+    "route": "/products/at-70/",
+    "title": "AT Dual Silver 70"
+  },
+  {
+    "route": "/products/at-40/",
+    "title": "AT Dual Silver 40"
+  },
+  {
+    "route": "/products/at-20/",
+    "title": "AT Dual Silver 20"
+  },
+  {
+    "route": "/products/at-bronze-35cp/",
+    "title": "AT Bronze Dual Silver 35CP"
+  },
+  {
+    "route": "/products/at-bronze-10cp/",
+    "title": "AT Bronze Dual Silver 10CP"
+  },
+  {
+    "route": "/products/at-titanium-40/",
+    "title": "AT Titanium Nitride Ceramic 40"
+  },
+  {
+    "route": "/products/at-titanium-30/",
+    "title": "AT Titanium Nitride Ceramic 30"
+  },
+  {
+    "route": "/products/t-9070/",
+    "title": "T Original-color Ceramic 9070"
+  },
+  {
+    "route": "/products/t-5090/",
+    "title": "T Original-color Ceramic 5090"
+  },
+  {
+    "route": "/products/t-3590/",
+    "title": "T Original-color Ceramic 3590"
+  },
+  {
+    "route": "/products/t-2090/",
+    "title": "T Original-color Ceramic 2090"
+  },
+  {
+    "route": "/products/t-30590/",
+    "title": "T Original-color Ceramic 30590"
+  },
+  {
+    "route": "/products/ak-6098s/",
+    "title": "AK Metal Ceramic 6098S"
+  },
+  {
+    "route": "/products/ak-1595s/",
+    "title": "AK Metal Ceramic 1595S"
+  },
+  {
+    "route": "/products/ak-2595s/",
+    "title": "AK Metal Ceramic 2595S"
+  },
+  {
+    "route": "/products/ak-3595s/",
+    "title": "AK Metal Ceramic 3595S"
+  },
+  {
+    "route": "/technology/",
+    "title": "Brand & technology"
+  },
+  {
+    "route": "/faq/",
+    "title": "Frequently asked questions"
+  },
+  {
+    "route": "/contact/",
+    "title": "Product inquiry"
+  },
+  {
+    "route": "/404.html",
+    "title": "Page not found"
+  }
+]

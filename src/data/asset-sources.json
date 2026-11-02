@@ -1,0 +1,299 @@
+[
+  {
+    "asset": "/images/hero-studio.webp",
+    "source": "AT TPU宣传册.中文版.pdf",
+    "page": 28,
+    "crop_normalized": null,
+    "embedded_image_index_by_area": 0,
+    "width": 2000,
+    "height": 1336,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/color-application.webp",
+    "source": "AT TPU宣传册.中文版.pdf",
+    "page": 28,
+    "crop_normalized": null,
+    "embedded_image_index_by_area": 1,
+    "width": 1600,
+    "height": 1069,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/window-road.webp",
+    "source": "AT窗膜画册中文版.pdf",
+    "page": 4,
+    "crop_normalized": null,
+    "embedded_image_index_by_area": 0,
+    "width": 658,
+    "height": 1170,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/window-ae.webp",
+    "source": "AT窗膜画册中文版.pdf",
+    "page": 6,
+    "crop_normalized": null,
+    "embedded_image_index_by_area": 0,
+    "width": 658,
+    "height": 823,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/window-at.webp",
+    "source": "AT窗膜画册中文版.pdf",
+    "page": 8,
+    "crop_normalized": null,
+    "embedded_image_index_by_area": 0,
+    "width": 658,
+    "height": 836,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/window-t.webp",
+    "source": "AT窗膜画册中文版.pdf",
+    "page": 10,
+    "crop_normalized": null,
+    "embedded_image_index_by_area": 0,
+    "width": 790,
+    "height": 1141,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/window-ak.webp",
+    "source": "AT窗膜画册中文版.pdf",
+    "page": 11,
+    "crop_normalized": [
+      0.34,
+      0.54,
+      1,
+      0.99
+    ],
+    "embedded_image_index_by_area": null,
+    "width": 1022,
+    "height": 985,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/color-material.webp",
+    "source": "AT TPU宣传册.中文版.pdf",
+    "page": 4,
+    "crop_normalized": [
+      0,
+      0.5,
+      1,
+      1
+    ],
+    "embedded_image_index_by_area": 0,
+    "width": 613,
+    "height": 430,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/brand-logo.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 6,
+    "crop_normalized": [
+      0.59,
+      0.41,
+      0.92,
+      0.64
+    ],
+    "embedded_image_index_by_area": null,
+    "width": 620,
+    "height": 287,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/ppf-t75.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 16,
+    "crop_normalized": [
+      0.4,
+      0.035,
+      0.995,
+      0.49
+    ],
+    "embedded_image_index_by_area": null,
+    "width": 1302,
+    "height": 660,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/ppf-t85.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 17,
+    "crop_normalized": [
+      0.02,
+      0.48,
+      0.63,
+      0.92
+    ],
+    "embedded_image_index_by_area": null,
+    "width": 1335,
+    "height": 639,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/ppf-t75m.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 18,
+    "crop_normalized": [
+      0.465,
+      0.065,
+      0.99,
+      0.715
+    ],
+    "embedded_image_index_by_area": null,
+    "width": 1149,
+    "height": 944,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/ppf-a75.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 21,
+    "crop_normalized": [
+      0.045,
+      0.47,
+      0.565,
+      0.965
+    ],
+    "embedded_image_index_by_area": null,
+    "width": 1138,
+    "height": 719,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/ppf-a85.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 22,
+    "crop_normalized": [
+      0.57,
+      0.54,
+      0.99,
+      0.92
+    ],
+    "embedded_image_index_by_area": null,
+    "width": 919,
+    "height": 552,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/ppf-a75m.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 23,
+    "crop_normalized": [
+      0.01,
+      0.73,
+      0.51,
+      0.99
+    ],
+    "embedded_image_index_by_area": null,
+    "width": 1094,
+    "height": 377,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/ppf-super-black.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 26,
+    "crop_normalized": [
+      0.4,
+      0.07,
+      0.995,
+      0.41
+    ],
+    "embedded_image_index_by_area": null,
+    "width": 1302,
+    "height": 493,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/images/ppf-super-matte-black.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 27,
+    "crop_normalized": [
+      0.55,
+      0.0,
+      0.91,
+      0.32
+    ],
+    "embedded_image_index_by_area": null,
+    "width": 788,
+    "height": 465,
+    "usage": "Brand brochure illustration; not evidence of exact color or vehicle endorsement."
+  },
+  {
+    "asset": "/evidence/ppf-16.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 16,
+    "usage": "Original Chinese specification page, unaltered except rasterization and compression."
+  },
+  {
+    "asset": "/evidence/ppf-17.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 17,
+    "usage": "Original Chinese specification page, unaltered except rasterization and compression."
+  },
+  {
+    "asset": "/evidence/ppf-18.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 18,
+    "usage": "Original Chinese specification page, unaltered except rasterization and compression."
+  },
+  {
+    "asset": "/evidence/ppf-21.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 21,
+    "usage": "Original Chinese specification page, unaltered except rasterization and compression."
+  },
+  {
+    "asset": "/evidence/ppf-22.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 22,
+    "usage": "Original Chinese specification page, unaltered except rasterization and compression."
+  },
+  {
+    "asset": "/evidence/ppf-23.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 23,
+    "usage": "Original Chinese specification page, unaltered except rasterization and compression."
+  },
+  {
+    "asset": "/evidence/ppf-26.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 26,
+    "usage": "Original Chinese specification page, unaltered except rasterization and compression."
+  },
+  {
+    "asset": "/evidence/ppf-27.webp",
+    "source": "AUTO Tailor 隐形车衣.中文版.pdf",
+    "page": 27,
+    "usage": "Original Chinese specification page, unaltered except rasterization and compression."
+  },
+  {
+    "asset": "/evidence/window-5.webp",
+    "source": "AT窗膜画册中文版.pdf",
+    "page": 5,
+    "usage": "Original Chinese specification page, unaltered except rasterization and compression."
+  },
+  {
+    "asset": "/evidence/window-7.webp",
+    "source": "AT窗膜画册中文版.pdf",
+    "page": 7,
+    "usage": "Original Chinese specification page, unaltered except rasterization and compression."
+  },
+  {
+    "asset": "/evidence/window-9.webp",
+    "source": "AT窗膜画册中文版.pdf",
+    "page": 9,
+    "usage": "Original Chinese specification page, unaltered except rasterization and compression."
+  },
+  {
+    "asset": "/evidence/window-11.webp",
+    "source": "AT窗膜画册中文版.pdf",
+    "page": 11,
+    "usage": "Original Chinese specification page, unaltered except rasterization and compression."
+  }
+]
