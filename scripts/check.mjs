@@ -122,7 +122,7 @@ for (const route of routes) {
   else assert.ok(!html.includes('<meta name="robots" content="noindex">'));
   if (publicSiteUrl) {
     assert.ok(html.includes('<link rel="canonical"'));
-    assert.ok(!html.includes('<meta name="robots" content="noindex">'));
+    if (route.route !== '/404.html') assert.ok(!html.includes('<meta name="robots" content="noindex">'));
   } else {
     assert.ok(!html.includes('<link rel="canonical"'));
   }

@@ -68,4 +68,4 @@ await mkdir(path.join(root,'docs'),{recursive:true});
 await writeFile(path.join(root,'docs/product-inventory.json'),JSON.stringify(products,null,2));
 await writeFile(path.join(root,'docs/page-inventory.json'),JSON.stringify(routes,null,2));
 await writeFile(path.join(root,'docs/PRODUCTS.md'),`# 产品与页面清单\n\n构建自 catalog.mjs；40 个条目，含 1 个 TPU 常规系列集合项，不等同于 40 个独立库存 SKU。页码为 PDF 物理页序。\n\n${categories.map(c=>`## ${c.name} (${c.count})\n\n| 英文名称 | 中文名称 | 核心规格 | 画册页 | 详情路径 |\n|---|---|---|---|---|\n${products.filter(p=>p.category===c.id).map(p=>`| ${p.name} | ${p.chineseName} | ${p.highlights.join('; ')} | ${p.source.page} | /products/${p.slug}/ |`).join('\n')}`).join('\n\n')}\n\n## 页面\n\n${routes.map(r=>`- ${r.route}：${r.title}`).join('\n')}\n`);
-console.log(`Built ${routes.length} pages, ${products.length} products. ${site.siteUrl?'Production sitemap generated.':'No production domain configured; indexing disabled.'}`);
+console.log(`Built ${routes.length} pages, ${products.length} products. ${publicSiteUrl?'Public sitemap generated.':'No public domain configured; indexing disabled.'}`);
