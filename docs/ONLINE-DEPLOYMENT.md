@@ -4,7 +4,9 @@ AUTO Tailor 是静态网站：构建后的 `dist/` 已包含 HTML、CSS、JS、�
 
 ## GitHub Pages（已配置自动部署）
 
-项目已包含 `.github/workflows/deploy-pages.yml`。首次设置只需做一次：
+GitHub Pages 已启用，自动部署 workflow 位于 `.github/workflows/deploy-pages.yml`。在线站点：<https://qazihb123-cell.github.io/AUTO-Tailor/>。源码仓库：<https://github.com/qazihb123-cell/AUTO-Tailor>。
+
+以后推送到 `main` 会自动构建和部署。首次部署所需的 Pages 设置已经完成。如需将项目复用到另一仓库，步骤如下：
 
 1. 在 GitHub 新建一个仓库，例如 `AUTO-Tailor`。
 2. 在本项目目录执行：
@@ -20,9 +22,9 @@ git push -u origin main
 
 3. 打开 GitHub 仓库的 **Settings → Pages**，将 **Source** 设为 **GitHub Actions**。
 4. 等待 **Actions → Deploy AUTO Tailor** 完成。
-5. 如果仓库名是 `你的账号.github.io`，访问 `https://你的账号.github.io/`；如果使用普通项目仓库，建议在 GitHub Pages 绑定自定义域名后访问根域名。当前站点使用根路径资源，直接放在普通项目仓库的 `/AUTO-Tailor/` 子路径下会导致资源路径不匹配。
+5. 用户名根仓库使用 `https://你的账号.github.io/`；普通项目仓库使用 `https://你的账号.github.io/AUTO-Tailor/`。工作流会把仓库子路径注入构建资源与链接。
 
-以后每次 `git push` 到 `main`，GitHub 会自动执行安装、构建、检查和部署。部署链接可以随时打开，不依赖 VSCode。
+之后每次 `git push` 到 `main`，GitHub 会自动执行安装、构建、检查和部署。部署链接不依赖 VSCode。
 
 ## 重要配置
 

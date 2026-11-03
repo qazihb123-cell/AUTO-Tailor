@@ -5,6 +5,9 @@ import assert from 'node:assert/strict';
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const root = fileURLToPath(new URL('../', import.meta.url)).replaceAll('\\', '/').replace(/\/$/, '');
 const base = process.env.TEST_BASE_URL || 'http://127.0.0.1:4173';
+const repository = process.env.GITHUB_REPOSITORY?.split('/')[1] || '';
+const siteBase = repository && repository.toLowerCase() !== 'qazihb123-cell.github.io' ? '/' + repository + '/' : '/';
+const pathFor = route => (siteBase === '/' ? '' : siteBase.slice(0, -1)) + route;
 const shots = `${root}/docs/screenshots`;
 await mkdir(shots, { recursive: true });
 
@@ -41,7 +44,7 @@ page.on('request', request => {
 
 async function inspectRoute(route, width) {
   await page.setViewportSize({ width, height: width <= 390 ? 844 : 1000 });
-  const response = await page.goto(base + route);
+  const response = await page.goto(base + pathFor(route));
   assert.ok(response?.status() < 400, `${route} failed to load at ${width}px.`);
   await page.locator('h1').waitFor();
   const info = await page.evaluate(() => {
@@ -91,7 +94,7 @@ async function inspectRoute(route, width) {
     const product = products.find(item => route === `/products/${item.slug}/`);
     if (product) {
       assert.equal(await page.locator('h1').textContent(), product.name);
-      assert.ok(await page.locator(`a[href="/contact/?product=${product.slug}"]`).count());
+      assert.ok(await page.locator(`a[href="${pathFor(`/contact/?product=${product.slug}`)}"]`).count());
       assert.ok((await page.locator('.source-strip').textContent()).includes(product.source.file));
       assert.ok((await page.locator('.source-strip').textContent()).includes(`Page ${product.source.page}`));
     }
@@ -101,7 +104,7 @@ async function inspectRoute(route, width) {
 for (const route of routes) await inspectRoute(route.route, 1440);
 for (const route of routes) await inspectRoute(route.route, 390);
 for (const link of links) {
-  const response = await page.request.get(base + link);
+  const response = await page.request.get(new URL(link, base).href);
   assert.equal(response.status(), 200, `${link} returned ${response.status()}.`);
 }
 checks.push(`${routes.length} routes audited at 1440px and 390px; one H1, unique titles, descriptions, source/page correspondence for 40 details and ${links.size} internal destinations returning 200.`);
@@ -136,7 +139,7 @@ const screenshotRoutes = [
 for (const width of [1440, 390]) {
   await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
   for (const [name, route] of screenshotRoutes) {
-    await page.goto(base + route);
+    await page.goto(base + pathFor(route));
     await loadImages();
     const broken = await page.evaluate(() => [...document.images].filter(image => !image.naturalWidth).map(image => image.src));
     assert.deepEqual(broken, [], `Broken images at ${route}, ${width}px.`);
@@ -153,14 +156,14 @@ checks.push('Seven representative pages rendered at desktop and mobile widths; e
 for (const width of [320, 768, 1920]) {
   await page.setViewportSize({ width, height: 900 });
   for (const route of ['/', '/products/', '/products/tpu-matte-3d-gray/', '/products/at-titanium-40/', '/contact/', '/technology/', '/faq/']) {
-    await page.goto(base + route);
+    await page.goto(base + pathFor(route));
     if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)) layoutIssues.push({ route, width });
   }
 }
 checks.push('Additional 320px, 768px and 1920px representative checks passed.');
 
 await page.setViewportSize({ width: 1440, height: 1000 });
-await page.goto(base + '/products/');
+await page.goto(base + pathFor('/products/'));
 await page.locator('#product-search').fill('T75');
 assert.equal(await page.locator('.product-card:visible').count(), 2);
 await page.locator('#product-search').fill('nonesuch-film');
@@ -188,19 +191,19 @@ await page.locator('#sort-filter').selectOption('name');
 const names = await page.locator('.product-card').evaluateAll(cards => cards.map(card => card.dataset.name));
 assert.deepEqual(names, [...names].sort((a, b) => a.localeCompare(b)));
 for (const [id, count] of [['paint-protection-film', 8], ['color-ppf', 11], ['window-film', 21]]) {
-  await page.goto(base + `/products/${id}/`);
+  await page.goto(base + pathFor(`/products/${id}/`));
   assert.equal(await page.locator('.product-card').count(), count);
 }
-await page.goto(base + '/products/window-film/');
+await page.goto(base + pathFor('/products/window-film/'));
 await page.locator('#performance-filter').selectOption('high-vlt');
 assert.equal(await page.locator('.product-card:visible').count(), countPerformance('high-vlt', 'window-film'));
-await page.goto(base + '/products/color-ppf/');
+await page.goto(base + pathFor('/products/color-ppf/'));
 await page.locator('#performance-filter').selectOption('carbon-fiber-effect');
 assert.equal(await page.locator('.product-card:visible').count(), countPerformance('carbon-fiber-effect', 'color-ppf'));
 checks.push('Search, empty state, reset, series filter, all five performance/material filters, category counts, thickness sort and name sort passed.');
 
 await page.setViewportSize({ width: 1440, height: 1000 });
-await page.goto(base + '/contact/?product=t75');
+await page.goto(base + pathFor('/contact/?product=t75'));
 assert.equal(await page.locator('#product').inputValue(), 't75');
 await page.locator('button[type=submit]').click();
 assert.equal(await page.locator('[aria-invalid=true]').count(), 4);
@@ -249,18 +252,18 @@ await page.waitForFunction(() => document.querySelector('#form-status').textCont
 checks.push('Intercepted success, explicit rejection and invalid JSON states passed with request payload/product correspondence. These are UI simulations, not real mail delivery.');
 
 await page.setViewportSize({ width: 390, height: 844 });
-await page.goto(base + '/');
+await page.goto(base + pathFor('/'));
 await page.locator('.menu-toggle').click();
 assert.ok(await page.locator('#main-nav').isVisible());
 assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'), 'true');
 await page.keyboard.press('Escape');
 assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'), 'false');
-await page.goto(base + '/faq/');
+await page.goto(base + pathFor('/faq/'));
 await page.locator('summary').first().click();
 assert.notEqual(await page.locator('details').first().getAttribute('open'), null);
 checks.push('Mobile navigation, Escape closure and FAQ disclosure passed.');
 
-const missing = await page.request.get(base + '/not-a-real-page/');
+const missing = await page.request.get(base + pathFor('/not-a-real-page/'));
 assert.equal(missing.status(), 404);
 const missingBody = await missing.text();
 assert.ok(missingBody.includes('This page is not in the collection.'));

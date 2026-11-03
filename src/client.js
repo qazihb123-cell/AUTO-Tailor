@@ -1,6 +1,18 @@
 const toggle=document.querySelector('.menu-toggle');
 const nav=document.querySelector('#main-nav');
 const siteBase=document.querySelector('meta[name="site-base"]')?.content||'/';
+const header=document.querySelector('.header');
+let scrollQueued=false;
+const updateHeader=()=>{
+ scrollQueued=false;
+ header?.classList.toggle('is-scrolled',window.scrollY>24);
+};
+window.addEventListener('scroll',()=>{
+ if(scrollQueued)return;
+ scrollQueued=true;
+ window.requestAnimationFrame(updateHeader);
+},{passive:true});
+updateHeader();
 toggle?.addEventListener('click',()=>{
  const open=toggle.getAttribute('aria-expanded')!=='true';
  toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');
@@ -8,23 +20,31 @@ toggle?.addEventListener('click',()=>{
  toggle.querySelector('img').src=`${siteBase}icons/${open?'x':'menu'}.svg`;
 });
 const gsap=window.gsap;
-if(gsap&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+if(gsap){
+ const motion=gsap.matchMedia();
+ motion.add('(prefers-reduced-motion: no-preference)',()=>{
  const revealTargets=document.querySelectorAll('.section-heading,.category-item,.tech-layout > *, .product-card,.page-intro,.detail-photo,.detail-summary,.detail-information > *, .technology-grid article,.faq-list section,.contact-layout > *, .source-strip > *, .inquiry-band .container > *');
+  const animations=[];
  const reveal=new IntersectionObserver(entries=>entries.forEach(entry=>{
   if(!entry.isIntersecting)return;
-  gsap.from(entry.target,{y:22,opacity:0,duration:.65,ease:'power2.out'});
+   animations.push(gsap.from(entry.target,{y:22,opacity:0,duration:.65,ease:'power2.out',clearProps:'transform,opacity'}));
   reveal.unobserve(entry.target);
  }),{threshold:.12});
  revealTargets.forEach(element=>reveal.observe(element));
- gsap.from('.hero-content > *',{y:22,opacity:0,duration:.72,stagger:.1,ease:'power2.out',delay:.12});
- document.querySelectorAll('.product-card,.category-item').forEach(card=>{
-  card.addEventListener('pointerenter',()=>gsap.to(card,{y:-4,duration:.22,ease:'power2.out'}));
-  card.addEventListener('pointerleave',()=>gsap.to(card,{y:0,duration:.25,ease:'power2.out'}));
+ const heroParts=document.querySelectorAll('.hero-content > *');
+  if(heroParts.length)animations.push(gsap.from(heroParts,{y:22,opacity:0,duration:.72,stagger:.1,ease:'power2.out',delay:.12,clearProps:'transform,opacity'}));
+  return ()=>{reveal.disconnect();animations.forEach(animation=>animation.revert());};
  });
+ motion.add('(min-width: 801px) and (prefers-reduced-motion: no-preference)',()=>{
  const heroImage=document.querySelector('.hero-image');
- if(heroImage&&window.matchMedia('(min-width: 801px)').matches){
-  window.addEventListener('scroll',()=>gsap.to(heroImage,{y:Math.min(window.scrollY*.06,28),duration:.25,ease:'power1.out'}),{passive:true});
- }
+ if(!heroImage)return;
+ let frame=0;
+  const place=()=>{frame=0;gsap.set(heroImage,{y:Math.min(window.scrollY*.06,28)});};
+  const onScroll=()=>{if(!frame)frame=requestAnimationFrame(place);};
+ window.addEventListener('scroll',onScroll,{passive:true});
+  place();
+  return ()=>{window.removeEventListener('scroll',onScroll);cancelAnimationFrame(frame);gsap.set(heroImage,{clearProps:'transform'});};
+ });
 }
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&toggle?.getAttribute('aria-expanded')==='true'){toggle.click();toggle.focus();}});
 if(document.querySelector('[data-catalogue]')){

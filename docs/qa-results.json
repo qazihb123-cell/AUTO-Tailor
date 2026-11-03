@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-11-02T14:38:55.176Z",
+  "timestamp": "2026-11-03T12:53:57.004Z",
   "browser": "156.0.4314.58",
-  "baseUrl": "http://127.0.0.1:4173",
+  "baseUrl": "http://127.0.0.1:4177",
   "routes": 49,
   "products": 40,
   "internalDestinations": 131,
@@ -19,72 +19,72 @@
     {
       "path": "docs/screenshots/home-1440.png",
       "width": 1440,
-      "bytes": 1045186
+      "bytes": 1029924
     },
     {
       "path": "docs/screenshots/catalogue-1440.png",
       "width": 1440,
-      "bytes": 1866925
+      "bytes": 1862761
     },
     {
       "path": "docs/screenshots/detail-1440.png",
       "width": 1440,
-      "bytes": 441118
+      "bytes": 481503
     },
     {
       "path": "docs/screenshots/window-detail-1440.png",
       "width": 1440,
-      "bytes": 293641
+      "bytes": 299514
     },
     {
       "path": "docs/screenshots/contact-1440.png",
       "width": 1440,
-      "bytes": 89235
+      "bytes": 90462
     },
     {
       "path": "docs/screenshots/technology-1440.png",
       "width": 1440,
-      "bytes": 485316
+      "bytes": 488058
     },
     {
       "path": "docs/screenshots/faq-1440.png",
       "width": 1440,
-      "bytes": 87087
+      "bytes": 88183
     },
     {
       "path": "docs/screenshots/home-390.png",
       "width": 390,
-      "bytes": 584048
+      "bytes": 585524
     },
     {
       "path": "docs/screenshots/catalogue-390.png",
       "width": 390,
-      "bytes": 2294504
+      "bytes": 2299347
     },
     {
       "path": "docs/screenshots/detail-390.png",
       "width": 390,
-      "bytes": 298820
+      "bytes": 310812
     },
     {
       "path": "docs/screenshots/window-detail-390.png",
       "width": 390,
-      "bytes": 281958
+      "bytes": 287555
     },
     {
       "path": "docs/screenshots/contact-390.png",
       "width": 390,
-      "bytes": 75232
+      "bytes": 78878
     },
     {
       "path": "docs/screenshots/technology-390.png",
       "width": 390,
-      "bytes": 225460
+      "bytes": 226655
     },
     {
       "path": "docs/screenshots/faq-390.png",
       "width": 390,
-      "bytes": 66941
+      "bytes": 67991
     }
   ],
   "checks": [

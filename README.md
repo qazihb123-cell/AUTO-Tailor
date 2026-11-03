@@ -1,6 +1,6 @@
 # AUTO Tailor 海外汽车膜展示站
 
-交付日期：2026-11-02。英文静态展示站，49 个页面，40 个真实画册条目。无购物车、支付、订单、会员或交易后台。资料未提供真实海外收件配置，目前询盘只下载本地草稿，不发送信息。
+更新时间：2026-11-03。英文静态展示站，49 个页面，40 个真实画册条目。在线预览：https://qazihb123-cell.github.io/AUTO-Tailor/ 。无购物车、支付、订单、会员或交易后台。资料未提供真实海外收件配置，目前询盘只下载本地草稿，不发送信息。
 
 ## 本地预览
 
@@ -8,7 +8,7 @@
 
 源码与交付文件都在本目录。浏览器应通过本地服务访问，不要直接双击 HTML，因为资源路径以站点根目录为基准。
 
-要求 Node.js 22 或更高版本，已在 Windows / Node.js 24.14.0 / npm 11.9.0 验证。项目没有构建或运行所需的第三方 npm 依赖，也没有交付 node_modules。
+要求 Node.js 22 或更高版本，已在 Windows / Node.js 24.14.0 / npm 11.9.0 验证。GSAP 为唯一 npm 依赖；构建时复制至静态站点本地提供，不依赖 CDN。
 
 在本目录打开终端：
 
@@ -47,4 +47,4 @@ npm run preview
 6. `docs/QA.md`、`docs/qa-results.json`、`docs/screenshots/`：实际验收结果。
 7. `docs/LICENSES-AND-PHP-REVIEW.md`：旧商城评估和素材授权记录。
 
-未公开发布到互联网，未购买服务，未向外部发送任何询盘。`dist/robots.txt` 当前禁止索引；填写真实域名后构建才会生成正式 sitemap 与 canonical。
+在线站点使用 GitHub Pages 托管，推送到 main 后会自动构建部署。未向外部发送任何询盘；接收服务和上线前待确认信息见 `docs/MISSING-INFORMATION.md`。

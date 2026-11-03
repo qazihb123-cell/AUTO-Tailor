@@ -4,12 +4,18 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root=fileURLToPath(new URL('../dist/',import.meta.url));
 const port=Number(process.env.PORT||4173);
+const repository=process.env.GITHUB_REPOSITORY?.split('/')[1]||'';
+const basePath=repository&&repository.toLowerCase()!=='qazihb123-cell.github.io'?`/${repository}`:'';
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.xml':'application/xml','.txt':'text/plain; charset=utf-8'};
 http.createServer(async(req,res)=>{
  try{
   if(!['GET','HEAD'].includes(req.method)){res.writeHead(405,{Allow:'GET, HEAD'});res.end();return;}
   const url=new URL(req.url,'http://localhost');
-  const file=path.resolve(root,'.'+decodeURIComponent(url.pathname));
+  let requestPath=decodeURIComponent(url.pathname);
+  if(basePath&&(requestPath===basePath||requestPath.startsWith(basePath+'/'))){
+   requestPath=requestPath.slice(basePath.length)||'/';
+  }
+  const file=path.resolve(root,'.'+requestPath);
   if(file!==root.slice(0,-1)&&!file.startsWith(root)){res.writeHead(403);res.end();return;}
   let target=file;
   try{if((await stat(file)).isDirectory()){

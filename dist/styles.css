@@ -8,3 +8,24 @@
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 .filters{grid-template-columns:2fr 1fr 1.25fr 1fr}
 @media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}
+
+:root{--radius:6px;--radius-small:4px}
+html{scroll-padding-top:104px}
+.header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.98);transition:background-color .24s ease,box-shadow .24s ease}
+.header.is-scrolled{background:rgba(255,255,255,.96);box-shadow:0 5px 18px rgba(23,28,25,.08)}
+.button,.product-card,.icon-button{border-radius:var(--radius)}
+.category-image,.detail-photo>a,.empty-state{border-radius:var(--radius);overflow:hidden}
+.product-image{overflow:hidden}
+input,select,textarea{border-radius:var(--radius-small)}
+.button{transition:transform .14s cubic-bezier(.22,1,.36,1),background-color .18s ease,border-color .18s ease}
+.button:active,.icon-button:active{transform:scale(.98)}
+.header nav{transition:background-color .24s ease}
+.product-card,.category-item{transition:translate .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease,border-color .18s ease}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .product-card:hover,.product-card:focus-within,.category-item:hover,.category-item:focus-visible{translate:0 -3px}
+ .product-card:hover,.product-card:focus-within{box-shadow:0 8px 20px rgba(23,28,25,.09)}
+ .button:hover:not(:disabled){translate:0 -2px}
+}
+.button{transition:translate .24s ease,transform .14s cubic-bezier(.22,1,.36,1),background-color .18s ease,border-color .18s ease}
+@media(max-width:800px){html{scroll-padding-top:88px}.header nav{max-height:calc(100dvh - 72px);overflow-y:auto;background:var(--paper);border-radius:0 0 var(--radius) var(--radius)}}
+@media(prefers-reduced-motion:reduce){.header,.header nav,.button{transition:none!important}.button:active,.icon-button:active,.category-item:hover img{transform:none}}
